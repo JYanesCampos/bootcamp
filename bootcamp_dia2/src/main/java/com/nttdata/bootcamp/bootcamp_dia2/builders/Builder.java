@@ -2,8 +2,11 @@ package com.nttdata.bootcamp.bootcamp_dia2.builders;
 
 public interface Builder {
 
-	void setPatas(int patas);
-	void setRuedas(boolean ruedas);
-	void setAcolchado(boolean acolchado);
-	void setPosabrazos(boolean posabrazos);
+	public Builder setPatas(int patas);
+	public Builder setRuedas(boolean ruedas);
+	public Builder setAcolchado(boolean acolchado);
+	public Builder setPosabrazos(boolean posabrazos);
+	public Builder reset();
+	public Silla build();
+	
 }

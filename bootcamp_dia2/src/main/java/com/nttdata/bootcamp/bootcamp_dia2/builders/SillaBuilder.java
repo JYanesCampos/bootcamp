@@ -1,36 +1,47 @@
 package com.nttdata.bootcamp.bootcamp_dia2.builders;
 
 public class SillaBuilder implements Builder {
+	private Silla silla;
 	
-	private int patas;
-	private boolean ruedas;
-	private boolean acolchado;
-	private boolean posabrazos;
-	
+	public SillaBuilder() {
+		this.reset();
+	}
 	
 	@Override
-	public void setPatas(int patas) {
-        this.patas = patas;
+	public Builder reset() {
+		this.silla = new Silla();
+		return this;
+	}
+	
+	@Override
+	public Builder setPatas(int patas) {
+        this.silla.setPatas(patas);
+        return this;
     }
 
 	@Override
-	public void setRuedas(boolean ruedas) {
-		this.ruedas = ruedas;
+	public Builder setRuedas(boolean ruedas) {
+		this.silla.setRuedas(ruedas);
+		return this;
 	}
 
 	@Override
-	public void setAcolchado(boolean acolchado) {
-		this.acolchado = acolchado;
+	public Builder setAcolchado(boolean acolchado) {
+		this.silla.setAcolchado(acolchado);
+		return this;
 	}
 
 	@Override
-	public void setPosabrazos(boolean posabrazos) {
-		this.posabrazos = posabrazos;
+	public Builder setPosabrazos(boolean posabrazos) {
+		this.silla.setPosabrazos(posabrazos);
+		return this;
 	}
 	
 	
-	public Silla getSilla() {
-		Silla silla = new Silla (patas, ruedas, acolchado, posabrazos);
+	public Silla build() {
+		Silla silla = this.silla;
+		this.reset();
 		return silla;
 	}
+	
 }

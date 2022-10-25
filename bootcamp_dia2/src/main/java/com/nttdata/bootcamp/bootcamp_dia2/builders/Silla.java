@@ -9,11 +9,29 @@ public class Silla {
 	
 	public Silla (int patas, boolean ruedas, boolean acolchado, boolean posabrazos) {
 		
-		this.patas = patas;
-		this.ruedas = ruedas;
-		this.acolchado = acolchado;
-		this.posabrazos = posabrazos;
+		this.setPatas(patas);
+		this.setRuedas(ruedas);
+		this.setAcolchado(acolchado);
+		this.setPosabrazos(posabrazos);
 		
+	}
+	
+	public Silla() {
+		
+	}
+	
+	public static Builder builder() {
+		return new SillaBuilder();
+	}
+	
+	@Override
+	public String toString() {
+		return "Silla{" +
+				"patas=" + patas + "\n" +
+				"ruedas=" + ruedas + "\n" +
+				"acolchado=" + acolchado + "\n" +
+				"posabrazos=" + posabrazos +
+				"}";
 	}
 
 	public int getPatas() {
@@ -30,5 +48,21 @@ public class Silla {
 
 	public boolean isPosabrazos() {
 		return posabrazos;
+	}
+
+	public void setPatas(int patas) {
+		this.patas = patas;
+	}
+
+	public void setRuedas(boolean ruedas) {
+		this.ruedas = ruedas;
+	}
+
+	public void setAcolchado(boolean acolchado) {
+		this.acolchado = acolchado;
+	}
+
+	public void setPosabrazos(boolean posabrazos) {
+		this.posabrazos = posabrazos;
 	}
 }
